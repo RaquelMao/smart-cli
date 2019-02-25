@@ -101,8 +101,7 @@ function main() {
     download(template, tmp, { clone: clone }, (error) => {
       process.on('exit', () => rm(tmp)); // 删除模板
 
-      if (error){
-        //err.code/err.message;
+      if (error) {
         spinner.text = chalk.red(`Failed to download template ${ template }: ${ error.message.trim() }`);
         spinner.fail();
         process.exit(1);
